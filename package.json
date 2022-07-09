@@ -1,0 +1,31 @@
+{
+  "name": "anni-k.github.io",
+  "version": "1.0.0",
+  "description": "anni-k",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anni-k/anni-k.github.io.git"
+  },
+  "author": "Annika Lichtenstein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anni-k/anni-k.github.io/issues"
+  },
+  "homepage": "https://github.com/anni-k/anni-k.github.io#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.2",
+    "parcel": "^2.6.2",
+    "posthtml-each": "^1.0.1",
+    "posthtml-include": "^1.7.4",
+    "posthtml-modules": "^0.9.0"
+  },
+  "dependencies": {
+    "posthtml-doctype": "^1.1.1"
+  }
+}

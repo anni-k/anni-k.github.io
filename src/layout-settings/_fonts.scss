@@ -1,0 +1,7 @@
+$family: 'Comfortaa', sans-serif;
+$familyHighlight: 'Roboto', Courier, monospace;
+
+@mixin size($size) {
+  font-size: #{$size}rem;
+  line-height: 1.2;
+}

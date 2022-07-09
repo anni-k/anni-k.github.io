@@ -1,0 +1,53 @@
+@use '../layout-settings/colors' as colors;
+@use '../layout-settings/dimensions' as dimensions;
+@use '../layout-settings/fonts' as fonts;
+@use '../layout-settings/wrapper';
+
+.header {
+  padding: dimensions.$spacing 0;
+  background: linear-gradient(-45deg, colors.$background, lighten(colors.$background, 20%), lighten(colors.$background, 10%));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+  &__title {
+    font-family: fonts.$familyHighlight;
+    position: relative;
+    margin-bottom: calc(dimensions.$spacing / 2);
+  }
+
+  &__subtitle {
+    font-family: fonts.$familyHighlight;
+  }
+
+  &__image {
+    border-radius: 50%;
+    border: dimensions.$border solid colors.$highlight;
+    margin-bottom: dimensions.$spacing;
+    max-width: 200px;
+    height: auto;
+    transition: transform 1s;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__content {
+    @extend %wrapper;
+    text-align: center;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

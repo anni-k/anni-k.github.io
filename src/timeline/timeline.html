@@ -1,0 +1,95 @@
+<dl class="timeline">
+  <each loop='item in items'>
+    <if condition="hasSeparator(item.separator)">
+      <dt class="timeline__separator">
+        {{ item.separator }}
+      </dt>
+    </if>
+    <dd class="timeline__item">
+      <div class="timeline__date">
+        <module href="./date.html" locals='{ "date": {{ item.from }} }'></module>
+        bis
+        <module href="./date.html" locals='{ "date": {{ item.to }} }'></module>
+      </div>
+      <article class="timeline__content">
+        <h2 class="timeline__headline">{{ item.headline }}</h2>
+        <p class="timeline__subheadline">{{ item.subheadline }}</p>
+        <if condition="hasDescription({{ item.description }})">
+          <module href="./description.html" locals='{ "description": {{ item.description }} }'></module>
+        </if>
+      </article>
+    </dd>
+  </each>
+</dl>
+
+
+<script locals>
+  module.exports = {
+    hasSeparator: (separator) => !!separator,
+    hasDescription: (description) => !!description,
+    items: [
+      {
+        separator: "Beruflicher Werdegang",
+        headline: "Senior Frontend Developer",
+        subheadline: "Snabble GmbH | Bonn",
+        from: { month: "05", year: "2018" },
+        to: { year: "2022" },
+        description: [
+          "Entwicklung der Self-Checkout Software",
+          "Entwicklung von Händler-Frontends",
+          "Entwicklung von Microservices",
+          "Organisation der internen QA",
+          "Organisation des Open Spaces",
+          "Software-Installationen beim Kunden",
+          "Kundenbetreuung während der Implementation",
+          "Recruiting"
+        ]
+      },
+      {
+        headline: "Frontend Developer",
+        subheadline: "i22 Digitalagentur GmbH | Bonn",
+        from: { month: "10", year: "2015" },
+        to: { month: "04", year: "2018" },
+        description: [
+          "Entwicklung von Shop-Frontends",
+          "Optimierung zugunsten der Barrierefreiheit",
+          "Organisation & Durchführung von internen Workshops",
+          "Mit- und Weiterentwicklung der Coding-Standards",
+          "Betreuung der Auszubildenden",
+          "Recruiting"
+        ]
+      },
+      {
+        headline: "Frontend Developer",
+        subheadline: "TWT Interactive GmbH | Bonn",
+        from: { month: "01", year: "2014" },
+        to: { month: "09", year: "2015" },
+        description: [
+          "Entwicklung von Corporate Websites",
+          "Entwicklung von CMS-Templates",
+          "Kundenberatung im Zuge der agilen Entwicklung",
+          "Organisation & Durchführung von internen Workshops",
+          "Mit- und Weiterentwicklung der Coding-Standards"
+        ]
+      },
+      {
+        separator: "Ausbildung",
+        headline: "Auszubildende zur Mediengestalterin Digital",
+        subheadline: "TWT Interactive GmbH | Bonn",
+        from: { month: "01", year: "2014" },
+        to: { month: "09", year: "2011" },
+        description: [
+          "Schwerpunkt: Gestaltung und Technik",
+          "Abschluss: Mediengestalterin Digital",
+          "Abschlussnote: 2 (89 Punkte)"
+        ]
+      },
+      {
+        headline: "Abitur, Gestaltungstechnische Assistentin",
+        subheadline: "Adolf-Kolping-Berufskolleg | Kerpen",
+        from: { year: "2008" },
+        to: { year: "2011" }
+      }
+    ]
+  }
+</script>

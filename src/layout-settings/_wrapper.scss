@@ -1,0 +1,7 @@
+@use 'dimensions' as dimensions;
+
+%wrapper {
+  max-width: dimensions.$width;
+  margin: 0 auto;
+  padding: dimensions.$spacing;
+}

@@ -1,0 +1,9 @@
+<if condition="!!date.month">
+  <time datetime="{{ date.year }}-{{ date.month }}">{{ date.month }}/{{ date.year }}</time>
+</if>
+<elseif condition="date.year == new Date().getFullYear()">
+  <time datetime="{{ date.year }}">heute</time>
+</elseif>
+<else>
+  <time datetime="{{ date.year }}">{{ date.year }}</time>
+</else>

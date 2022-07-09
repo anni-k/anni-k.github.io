@@ -1,0 +1,95 @@
+@use '../layout-settings/colors' as colors;
+@use '../layout-settings/dimensions' as dimensions;
+@use '../layout-settings/fonts' as fonts;
+
+/* comfortaa-regular - latin */
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('./typography/comfortaa/comfortaa-v40-latin-regular.woff2') format('woff2'),
+    url('./typography/comfortaa/comfortaa-v40-latin-regular.woff') format('woff');
+}
+
+/* comfortaa-700 - latin */
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+    url('./typography/comfortaa/comfortaa-v40-latin-700.woff2') format('woff2'),
+    url('./typography/comfortaa/comfortaa-v40-latin-700.woff') format('woff');
+}
+
+/* comfortaa-300 - latin */
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 300;
+  src: local(''),
+    url('./typography/comfortaa/comfortaa-v40-latin-300.woff2') format('woff2'),
+    url('./typography/comfortaa/comfortaa-v40-latin-300.woff') format('woff');
+}
+
+/* roboto-mono-regular - latin */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('./typography/roboto/roboto-mono-v21-latin-regular.woff2') format('woff2'),
+    url('./typography/roboto/roboto-mono-v21-latin-regular.woff') format('woff');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: fonts.$family;
+}
+
+h1 {
+  @include fonts.size(2.4);
+}
+
+h2 {
+  @include fonts.size(1.4);
+}
+
+p,
+li,
+dt,
+dd {
+  color: colors.$font;
+  font-family: fonts.$family;
+  @include fonts.size(1);
+}
+
+.brackets {
+  &:before,
+  &:after {
+    color: colors.$highlight;
+    opacity: 1;
+    transition: opacity ease 500ms;
+  }
+
+  &:before {
+    content: '{';
+    margin-right: dimensions.$spacing;
+  }
+
+  &:after {
+    content: '}';
+    margin-left: dimensions.$spacing;
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      opacity: 0;
+    }
+  }
+}
